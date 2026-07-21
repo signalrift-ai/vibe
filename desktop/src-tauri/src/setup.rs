@@ -43,7 +43,7 @@ pub fn setup(app: &App) -> Result<(), Box<dyn std::error::Error>> {
     crate::cleaner::clean_old_logs(app.handle()).log_error();
     crate::cleaner::clean_old_files().log_error();
     crate::cleaner::clean_updater_files().log_error();
-    tracing::debug!("Vibe App Running");
+    tracing::debug!("SayRead App Running");
 
     // Crash handler
 
@@ -69,7 +69,7 @@ pub fn setup(app: &App) -> Result<(), Box<dyn std::error::Error>> {
                     .dialog()
                     .message("App crashed with error. Please register to Github and then click report.")
                     .kind(tauri_plugin_dialog::MessageDialogKind::Error)
-                    .title("Vibe Crashed")
+                    .title("SayRead Crashed")
                     .buttons(MessageDialogButtons::OkCustom("Report".into()))
                     .show(|_| {});
                 let _ = tauri_plugin_opener::open_url(get_issue_url(format!("{:?}", info)), None::<&str>);
@@ -111,7 +111,7 @@ pub fn setup(app: &App) -> Result<(), Box<dyn std::error::Error>> {
             .inner_size(800.0, 700.0)
             .min_inner_size(800.0, 700.0)
             .center()
-            .title("Vibe")
+            .title("SayRead")
             .resizable(true)
             .focused(true)
             .shadow(true)

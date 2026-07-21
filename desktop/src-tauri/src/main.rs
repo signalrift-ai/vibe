@@ -8,6 +8,7 @@ mod cmd;
 mod config;
 mod diagnostics;
 mod dictation_indicator;
+mod display_lock;
 mod error;
 mod ffmpeg;
 mod logging;
@@ -125,7 +126,12 @@ async fn main() -> Result<()> {
             dictation_indicator::show_dictation_indicator,
             dictation_indicator::get_dictation_indicator_state,
             dictation_indicator::dictation_indicator_ready,
-            dictation_indicator::hide_dictation_indicator
+            dictation_indicator::hide_dictation_indicator,
+            display_lock::display_lock_status,
+            display_lock::display_lock_pair,
+            display_lock::display_lock_repair,
+            display_lock::display_lock_change_password,
+            display_lock::display_lock_unpair
         ])
         .build(tauri::generate_context!())
         .expect("error while building tauri application");

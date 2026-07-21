@@ -4,6 +4,7 @@ import {
 	Bot,
 	Cpu,
 	Globe,
+	Lock,
 	Mic,
 	ShieldCheck,
 	SlidersHorizontal,
@@ -18,6 +19,7 @@ import { Button } from '~/components/ui/button'
 import { AdvancedSection } from './sections/advanced'
 import { ApiSection } from './sections/api'
 import { DictationSection } from './sections/dictation'
+import { DisplayLockSection } from './sections/display-lock'
 import { GeneralSection } from './sections/general'
 import { ModelsSection } from './sections/models'
 import { PrivacySection } from './sections/privacy'
@@ -30,7 +32,7 @@ interface SettingsPageProps {
 	scrollTo?: string
 }
 
-type SectionId = 'general' | 'transcription' | 'models' | 'summarize' | 'tuning' | 'dictation' | 'api' | 'privacy' | 'advanced'
+type SectionId = 'general' | 'transcription' | 'models' | 'summarize' | 'tuning' | 'dictation' | 'api' | 'privacy' | 'advanced' | 'displayLock'
 
 interface SettingsSection {
 	id: SectionId
@@ -74,6 +76,7 @@ export default function SettingsPage({ setVisible, scrollTo }: SettingsPageProps
 			sections: [
 				{ id: 'api', label: m.apiAndAgents(), icon: <Terminal className="h-4 w-4" /> },
 				{ id: 'advanced', label: m.advanced(), icon: <Wrench className="h-4 w-4" /> },
+				{ id: 'displayLock', label: m.displayLock(), icon: <Lock className="h-4 w-4" /> },
 			],
 		},
 	]
@@ -145,6 +148,8 @@ export default function SettingsPage({ setVisible, scrollTo }: SettingsPageProps
 					{activeSection === 'privacy' && <PrivacySection vm={vm} />}
 
 					{activeSection === 'advanced' && <AdvancedSection vm={vm} />}
+
+					{activeSection === 'displayLock' && <DisplayLockSection />}
 
 				</div>
 			</div>

@@ -6,6 +6,8 @@ import '~/globals.css'
 import SetupPage from '~/pages/setup/page'
 import HomePage from '~/pages/home/page'
 import BatchPage from './pages/batch/page'
+import { DisplayLockProvider, useDisplayLock } from './providers/display-lock'
+import { DisplayLockScreen } from './components/display-lock-screen'
 import { ErrorModalProvider } from './providers/error-modal'
 import { UpdaterProvider } from './providers/updater'
 import { PreferenceProvider } from './providers/preference'
@@ -23,7 +25,9 @@ import { DirectionProvider } from '~/components/ui/direction'
 export default function App() {
 	return (
 		<PreferenceProvider>
-			<AppContent />
+			<DisplayLockProvider>
+				<AppContent />
+			</DisplayLockProvider>
 		</PreferenceProvider>
 	)
 }
@@ -31,10 +35,19 @@ export default function App() {
 function AppContent() {
 	const { displayLanguage } = usePreferenceProvider()
 	const dir = getTextDirection(displayLanguage)
+	const { status } = useDisplayLock()
 
 	useEffect(() => {
 		document.body.dir = dir
 	}, [dir])
+
+	if (status === 'mismatched') {
+		return (
+			<DirectionProvider dir={dir}>
+				<DisplayLockScreen />
+			</DirectionProvider>
+		)
+	}
 
 	return (
 		<DirectionProvider dir={dir}>

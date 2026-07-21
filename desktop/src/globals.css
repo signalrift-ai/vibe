@@ -80,13 +80,13 @@ html.dictation-indicator-window #root {
 	--card-foreground: hsl(215 22% 17%);
 	--popover: hsl(0 0% 100% / 0.98);
 	--popover-foreground: hsl(215 22% 17%);
-	--primary: hsl(205 74% 43%);
+	--primary: hsl(219 83% 43%);
 	--primary-foreground: hsl(0 0% 100%);
 	--secondary: hsl(206 28% 92%);
 	--secondary-foreground: hsl(214 20% 24%);
 	--muted: hsl(207 24% 93%);
 	--muted-foreground: hsl(214 12% 44%);
-	--accent: hsl(206 44% 90%);
+	--accent: hsl(181 55% 90%);
 	--accent-foreground: hsl(214 20% 24%);
 	--destructive: hsl(0 78% 57%);
 	--destructive-foreground: hsl(210 40% 98%);
@@ -94,20 +94,20 @@ html.dictation-indicator-window #root {
 	--success-foreground: hsl(154 100% 96%);
 	--border: hsl(208 22% 83%);
 	--input: hsl(208 22% 83%);
-	--ring: hsl(205 72% 45%);
-	--chart-1: hsl(205 74% 43%);
-	--chart-2: hsl(197 60% 42%);
+	--ring: hsl(219 83% 50%);
+	--chart-1: hsl(219 83% 43%);
+	--chart-2: hsl(181 99% 37%);
 	--chart-3: hsl(28 70% 52%);
 	--chart-4: hsl(45 80% 52%);
 	--chart-5: hsl(265 45% 55%);
 	--sidebar: hsl(0 0% 100% / 0.9);
 	--sidebar-foreground: hsl(215 20% 18%);
-	--sidebar-primary: hsl(205 74% 43%);
+	--sidebar-primary: hsl(219 83% 43%);
 	--sidebar-primary-foreground: hsl(0 0% 100%);
-	--sidebar-accent: hsl(206 30% 92%);
+	--sidebar-accent: hsl(181 40% 92%);
 	--sidebar-accent-foreground: hsl(214 20% 24%);
 	--sidebar-border: hsl(208 20% 84%);
-	--sidebar-ring: hsl(205 72% 45%);
+	--sidebar-ring: hsl(219 83% 50%);
 	--shadow-2xs: 0 1px 1px hsl(211 60% 11% / 0.06);
 	--shadow-xs: 0 1px 2px hsl(211 60% 11% / 0.08);
 	--shadow-sm: 0 4px 12px hsl(220 18% 16% / 0.05);
@@ -126,7 +126,7 @@ html.dictation-indicator-window #root {
 	--card-foreground: hsl(210 18% 93%);
 	--popover: hsl(220 9% 17%);
 	--popover-foreground: hsl(210 18% 93%);
-	--primary: hsl(212 100% 56%);
+	--primary: hsl(210 90% 58%);
 	--primary-foreground: hsl(0 0% 100%);
 	--secondary: hsl(220 8% 22%);
 	--secondary-foreground: hsl(210 14% 90%);
@@ -140,20 +140,20 @@ html.dictation-indicator-window #root {
 	--success-foreground: hsl(153 58% 10%);
 	--border: hsl(220 8% 34%);
 	--input: hsl(220 8% 34%);
-	--ring: hsl(212 100% 60%);
-	--chart-1: hsl(212 100% 56%);
-	--chart-2: hsl(197 38% 60%);
+	--ring: hsl(210 90% 62%);
+	--chart-1: hsl(210 90% 58%);
+	--chart-2: hsl(178 82% 50%);
 	--chart-3: hsl(30 76% 58%);
 	--chart-4: hsl(50 74% 58%);
 	--chart-5: hsl(270 58% 62%);
 	--sidebar: hsl(220 9% 16%);
 	--sidebar-foreground: hsl(210 18% 93%);
-	--sidebar-primary: hsl(212 100% 56%);
+	--sidebar-primary: hsl(210 90% 58%);
 	--sidebar-primary-foreground: hsl(0 0% 100%);
 	--sidebar-accent: hsl(220 8% 24%);
 	--sidebar-accent-foreground: hsl(210 14% 90%);
 	--sidebar-border: hsl(220 8% 34%);
-	--sidebar-ring: hsl(212 100% 60%);
+	--sidebar-ring: hsl(210 90% 62%);
 	--shadow-sm: 0 8px 20px hsl(225 28% 4% / 0.28);
 	--shadow: 0 12px 28px hsl(225 28% 4% / 0.35);
 	--shadow-md: 0 18px 38px hsl(225 28% 4% / 0.42);
@@ -176,8 +176,8 @@ html.dictation-indicator-window #root {
 		@apply bg-background text-foreground;
 		font-feature-settings: 'rlig' 1, 'calt' 1;
 		background-image:
-			radial-gradient(1200px 700px at 15% -10%, hsl(205 90% 88% / 0.55) 0%, transparent 60%),
-			radial-gradient(900px 600px at 100% 0%, hsl(280 70% 88% / 0.35) 0%, transparent 55%),
+			radial-gradient(1200px 700px at 15% -10%, hsl(219 90% 88% / 0.55) 0%, transparent 60%),
+			radial-gradient(900px 600px at 100% 0%, hsl(178 75% 88% / 0.35) 0%, transparent 55%),
 			linear-gradient(180deg, hsl(210 32% 97%) 0%, hsl(210 28% 95%) 100%);
 		background-repeat: no-repeat;
 		background-attachment: fixed;
@@ -198,8 +198,8 @@ html.dictation-indicator-window #root {
 
 	.dark body {
 		background-image:
-			radial-gradient(1200px 700px at 15% -10%, hsl(212 100% 30% / 0.16) 0%, transparent 60%),
-			radial-gradient(900px 600px at 100% 0%, hsl(280 60% 30% / 0.12) 0%, transparent 55%),
+			radial-gradient(1200px 700px at 15% -10%, hsl(210 100% 30% / 0.16) 0%, transparent 60%),
+			radial-gradient(900px 600px at 100% 0%, hsl(178 70% 30% / 0.12) 0%, transparent 55%),
 			linear-gradient(180deg, hsl(220 10% 11%) 0%, hsl(220 10% 9%) 100%);
 	}
 
@@ -208,11 +208,11 @@ html.dictation-indicator-window #root {
 	}
 
 	::selection {
-		background: hsl(205 74% 43% / 0.22);
+		background: hsl(219 83% 43% / 0.22);
 	}
 
 	.dark ::selection {
-		background: hsl(212 100% 56% / 0.26);
+		background: hsl(210 90% 58% / 0.26);
 	}
 
 	::-webkit-scrollbar {

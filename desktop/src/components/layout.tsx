@@ -33,7 +33,10 @@ export default function Layout({ children }: { children: ReactNode }) {
 			<ModelDownloadPrompt />
 			<div className="app-shell">
 				<div className="stagger-in mb-6 flex items-center justify-between gap-4 pb-1">
-					<h1 className="app-title">{m.appTitle()}</h1>
+					<div className="flex items-center gap-2.5">
+						<img src="/sayread-icon.png" alt="" className="h-8 w-8 md:h-9 md:w-9" />
+						<h1 className="app-title">{m.appTitle()}</h1>
+					</div>
 					<AppMenu onClickSettings={openSettings} availableUpdate={availableUpdate} updateApp={updateApp} />
 				</div>
 				<PageTransition>
