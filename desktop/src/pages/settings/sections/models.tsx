@@ -10,13 +10,11 @@ import { Label } from '~/components/ui/label'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '~/components/ui/select'
 import { SectionCard, type SettingsViewModel } from './shared'
 import { getFriendlyModelName } from '~/lib/model'
-import { useTapGate } from '~/components/tap-gate'
 
 export function ModelsSection({ vm }: { vm: SettingsViewModel }) {
 	const [editingPath, setEditingPath] = useState<string | null>(null)
 	const [editingName, setEditingName] = useState('')
 	const currentModel = vm.models.find((model) => model.path === vm.preference.modelPath)
-	const { guard } = useTapGate()
 
 	return (
 <div className="space-y-5">
@@ -30,9 +28,9 @@ export function ModelsSection({ vm }: { vm: SettingsViewModel }) {
 												value={vm.downloadURL}
 												onChange={(event) => vm.setDownloadURL(event.target.value)}
 												placeholder={m.pasteModelLink()}
-												onKeyDown={(event) => (event.key === 'Enter' ? guard(vm.downloadModel)() : null)}
+												onKeyDown={(event) => (event.key === 'Enter' ? vm.downloadModel() : null)}
 											/>
-											<Button variant="default" size="icon" onClick={guard(vm.downloadModel)} className="shrink-0">
+											<Button variant="default" size="icon" onClick={vm.downloadModel} className="shrink-0">
 												<svg
 													aria-hidden="true"
 													focusable="false"
@@ -141,13 +139,13 @@ export function ModelsSection({ vm }: { vm: SettingsViewModel }) {
 										</Button>
 										<Button
 											variant="ghost"
-											onMouseDown={guard(vm.openModelPath)}
+											onMouseDown={vm.openModelPath}
 											className="h-11 w-full justify-between rounded-lg px-3 font-medium hover:bg-accent/60">
 											{m.modelsFolder()} <FolderIcon className="h-4 w-4 text-muted-foreground" />
 										</Button>
 										<Button
 											variant="ghost"
-											onMouseDown={guard(vm.changeModelsFolder)}
+											onMouseDown={vm.changeModelsFolder}
 											className="h-11 w-full justify-between rounded-lg px-3 font-medium hover:bg-accent/60">
 											{m.changeModelsFolder()} <WrenchIcon className="h-4 w-4 text-muted-foreground" />
 										</Button>

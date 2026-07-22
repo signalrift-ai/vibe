@@ -400,6 +400,5 @@
 	"displayLockActionSuccess": "Done",
 	"displayLockBlockedTitle": "This SayRead installation is locked to a different display",
 	"displayLockBlockedBody": "This copy of SayRead is paired to a different Interactive Flat Panel. Enter the admin password to re-pair it to this display.",
-	"displayLockBlockedSubmit": "Re-pair to this display",
-	"tapsRemaining": "Tap {count} more times to unlock"
+	"displayLockBlockedSubmit": "Re-pair to this display"
 }
